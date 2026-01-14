@@ -91,16 +91,16 @@ const Dashboard = () => {
 
   return (
     <div className="space-y-8">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Dashboard</h1>
-          <p className="text-gray-600 mt-2">Welcome to your library management system</p>
+          <h1 className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Dashboard</h1>
+          <p className="text-gray-600 mt-1 sm:mt-2 text-sm sm:text-base">Welcome to your library management system</p>
         </div>
         <button
           onClick={fetchStats}
-          className="group px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2"
+          className="group px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center gap-2 text-sm sm:text-base"
         >
-          <svg className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-180 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
           Refresh
@@ -128,8 +128,8 @@ const Dashboard = () => {
               </div>
 
               <div className="text-white">
-                <p className="text-5xl font-bold mb-2 drop-shadow-lg">{card.value}</p>
-                <p className="text-white/90 text-sm font-medium">{card.description}</p>
+                <p className="text-3xl sm:text-5xl font-bold mb-2 drop-shadow-lg">{card.value}</p>
+                <p className="text-white/90 text-xs sm:text-sm font-medium">{card.description}</p>
               </div>
             </div>
 
@@ -141,9 +141,9 @@ const Dashboard = () => {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-2">
-            <svg className="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 border border-gray-100">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800 flex items-center gap-2">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             Quick Actions
@@ -190,9 +190,9 @@ const Dashboard = () => {
         </div>
 
         {/* System Info */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-2">
-            <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 border border-gray-100">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800 flex items-center gap-2">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
             System Information
@@ -236,24 +236,24 @@ const Dashboard = () => {
       </div>
 
       {/* Additional Stats */}
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-xl font-bold mb-4 text-gray-800">Library Statistics</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="text-center p-4 bg-gray-50 rounded-lg">
-            <p className="text-2xl font-bold text-blue-600">{stats?.totalBooks || 0}</p>
-            <p className="text-sm text-gray-600 mt-1">Total Books</p>
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+        <h2 className="text-lg sm:text-xl font-bold mb-4 text-gray-800">Library Statistics</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg">
+            <p className="text-xl sm:text-2xl font-bold text-blue-600">{stats?.totalBooks || 0}</p>
+            <p className="text-xs sm:text-sm text-gray-600 mt-1">Total Books</p>
           </div>
-          <div className="text-center p-4 bg-gray-50 rounded-lg">
-            <p className="text-2xl font-bold text-green-600">{stats?.availableBooks || 0}</p>
-            <p className="text-sm text-gray-600 mt-1">Available</p>
+          <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg">
+            <p className="text-xl sm:text-2xl font-bold text-green-600">{stats?.availableBooks || 0}</p>
+            <p className="text-xs sm:text-sm text-gray-600 mt-1">Available</p>
           </div>
-          <div className="text-center p-4 bg-gray-50 rounded-lg">
-            <p className="text-2xl font-bold text-yellow-600">{stats?.borrowedBooks || 0}</p>
-            <p className="text-sm text-gray-600 mt-1">Borrowed</p>
+          <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg">
+            <p className="text-xl sm:text-2xl font-bold text-yellow-600">{stats?.borrowedBooks || 0}</p>
+            <p className="text-xs sm:text-sm text-gray-600 mt-1">Borrowed</p>
           </div>
-          <div className="text-center p-4 bg-gray-50 rounded-lg">
-            <p className="text-2xl font-bold text-red-600">{stats?.overdueBooks || 0}</p>
-            <p className="text-sm text-gray-600 mt-1">Overdue</p>
+          <div className="text-center p-3 sm:p-4 bg-gray-50 rounded-lg">
+            <p className="text-xl sm:text-2xl font-bold text-red-600">{stats?.overdueBooks || 0}</p>
+            <p className="text-xs sm:text-sm text-gray-600 mt-1">Overdue</p>
           </div>
         </div>
       </div>
