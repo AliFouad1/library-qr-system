@@ -99,7 +99,7 @@ const PublicBookDetail = () => {
             {book.coverImage ? (
               <>
                 <img
-                  src={`${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}${book.coverImage}`}
+                  src={book.coverImage?.startsWith('http') ? book.coverImage : `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}${book.coverImage}`}
                   alt={book.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />

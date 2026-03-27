@@ -284,7 +284,7 @@ const Books = () => {
               {/* صورة الغلاف كخلفية */}
               {book.coverImage ? (
                 <img
-                  src={`${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}${book.coverImage}`}
+                  src={book.coverImage?.startsWith('http') ? book.coverImage : `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}${book.coverImage}`}
                   alt={book.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -801,7 +801,7 @@ const Books = () => {
                 {selectedBook.coverImage ? (
                   <div className="relative h-64">
                     <img
-                      src={`${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}${selectedBook.coverImage}`}
+                      src={selectedBook.coverImage?.startsWith('http') ? selectedBook.coverImage : `${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}${selectedBook.coverImage}`}
                       alt={selectedBook.title}
                       className="w-full h-full object-cover"
                     />
